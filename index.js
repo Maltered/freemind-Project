@@ -52,8 +52,17 @@ function getDepth(element) {
     return depth + 1;
 }
 
-document.querySelectorAll('.color-picker').forEach((picker, index) => {
+const colorPickers = document.querySelectorAll('.color-picker')
+
+colorPickers.forEach((picker, index) => {
     picker.addEventListener('input', function() {
         localStorage.setItem(`divColor${index}`, picker.value);
     });
+});
+
+colorPickers.forEach((picker, index) => {
+    const savedColor = localStorage.getItem(`divColor${index}`);
+    if (savedColor) {
+        picker.value = savedColor;
+    }
 });
