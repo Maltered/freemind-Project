@@ -19,13 +19,8 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
 
                 document.getElementById('mindMap').innerHTML = listeSansLi.replace(/<li>([^<]+)/g, '<li>$1</li>');
 
-                const liElements = document.querySelectorAll('#mindMap li');
-
-
-                liElements.forEach((li, index) => {
+                document.querySelectorAll('#mindMap li').forEach(li => {
                     const depth = getDepth(li);
-
-
 
                     switch (depth) {
                         case 1: li.style.backgroundColor = localStorage.getItem(`divColor0`); break
@@ -42,9 +37,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
 
                     li.classList.add(`niveau-${depth}`);
                 });
-
             }
-
         };
         reader.readAsText(selectedFile);
     }
@@ -58,3 +51,9 @@ function getDepth(element) {
     }
     return depth + 1;
 }
+
+document.querySelectorAll('.color-picker').forEach((picker, index) => {
+    picker.addEventListener('input', function() {
+        localStorage.setItem(`divColor${index}`, picker.value);
+    });
+});
