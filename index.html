@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+<header>
+    <div>
+        <h1>FreeMind to Color Line</h1>
+        <h2>Par Sohan Anampalli</h2>
+        <div class="fileInputDiv">
+            <p>Importer</p>
+            <input type="file" id="fileInput" accept=".html">
+        </div>
+    </div>
+    <div>
+        <img src="tuto.png" width="500"/>
+    </div>
+
+</header>
+<div id="mindMap" contenteditable="true"></div>
+<div id="change-color">
+    <h1>Changer la couleur des niveaux</h1>
+    <div class="component">
+        <div class="input-color">
+            <input type="color" class="color-picker" value="#34FF35">
+            <input type="color" class="color-picker" value="#FF2C2C">
+            <input type="color" class="color-picker" value="#1DFFE9">
+            <input type="color" class="color-picker" value="#FF861D">
+            <input type="color" class="color-picker" value="#1D7CFF">
+            <input type="color" class="color-picker" value="#5f9ea0">
+            <input type="color" class="color-picker" value="#800080">
+            <input type="color" class="color-picker" value="#ffff00">
+            <input type="color" class="color-picker" value="#ff1493">
+            <input type="color" class="color-picker" value="#6495ed">
+        </div>
+        <div class="nom-niveau">
+            <p>Niv 1</p>
+            <p>Niv 10</p>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
